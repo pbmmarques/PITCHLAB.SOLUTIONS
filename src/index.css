@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: 0 0% 100%;
+  --foreground: 215 28% 17%; /* Deep Blue/Almost Black */
+  --card: 0 0% 100%;
+  --card-foreground: 215 28% 17%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 215 28% 17%;
+  --primary: 217 91% 60%; /* Vibrant Blue */
+  --primary-foreground: 0 0% 100%; /* White */
+  --secondary: 210 40% 96%; /* Light Grayish Blue */
+  --secondary-foreground: 215 28% 17%;
+  --muted: 210 40% 96%;
+  --muted-foreground: 215 20% 65%; /* Medium Gray */
+  --accent: 210 40% 96%;
+  --accent-foreground: 217 91% 60%;
+  --destructive: 0 84.2% 60.2%;
+  --destructive-foreground: 0 0% 100%;
+  --border: 214.3 31.8% 91.4%; /* Light Gray */
+  --input: 214.3 31.8% 91.4%;
+  --ring: 217 91% 60%;
+  --radius: 0.5rem;
+}
+
+* {
+  border-color: hsl(var(--border));
+}
+
+body {
+  background-color: hsl(var(--background));
+  color: hsl(var(--foreground));
+  font-family: 'Inter', sans-serif;
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(200, 80%, 55%) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.gradient-bg {
+  background: linear-gradient(135deg, hsla(var(--primary), 0.1) 0%, hsla(200, 80%, 55%, 0.1) 100%);
+}
+
+.gradient-card {
+  background: linear-gradient(135deg, hsla(var(--primary), 0.05) 0%, hsla(200, 80%, 55%, 0.05) 100%);
+  backdrop-filter: blur(10px);
+  border: 1px solid hsla(var(--border), 0.5);
+}
+
+.floating-animation {
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-15px); }
+}
+
+.pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite alternate;
+}
+
+@keyframes pulse-glow {
+  from { box-shadow: 0 0 15px hsla(var(--primary), 0.3); }
+  to { box-shadow: 0 0 30px hsla(var(--primary), 0.6); }
+}
+
+.scroll-smooth {
+  scroll-behavior: smooth;
+}
+
+.glass-effect {
+  background: hsla(0, 0%, 100%, 0.8); /* More opaque white */
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid hsl(var(--border));
+}
